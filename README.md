@@ -1,5 +1,5 @@
-# Atlas Marketing OS
-> An AI-Native Decision Intelligence Engine for Modern Marketing Teams.
+# Atlas Marketing OS - Backend API
+> Backend services for the AI-Native Decision Intelligence Engine.
 
 **Built for the Xeno Engineering Evaluation.**
 
@@ -15,7 +15,6 @@ Legacy CRMs act as static filing cabinets requiring operators to write complex S
 - **Premium UI:** Designed with a Linear/Vercel-inspired glassmorphic aesthetic featuring 150-300ms micro-animations.
 
 ## Architecture
-- **Frontend:** Next.js (React), TypeScript, Tailwind CSS, Framer Motion.
 - **Backend Core:** FastAPI (Python), strictly typed with Pydantic.
 - **Database:** SQLite (Relational, strictly normalized, event-driven).
 - **AI Engine:** Mistral AI.
@@ -46,17 +45,6 @@ cp .env.example .env
 uvicorn main:app --reload --port 8001
 ```
 
-### 3. Frontend
-Open a new terminal:
-```bash
-cd frontend
-npm install
-cp .env.example .env.local
-# Start the frontend on port 3000
-npm run dev
-```
-
-Visit `http://localhost:3000` to access the Command Center.
 
 ## System Design Decisions & Tradeoffs
 1. **SQLite over PostgreSQL:** Used for the MVP to allow zero-config evaluations. However, the schema is strictly normalized and fully compatible with Postgres. Transitioning requires only updating the SQLAlchemy connection string.
