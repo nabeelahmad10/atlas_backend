@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: luxe-crm-api
+    runtime: python
+    buildCommand: "pip install -r backend/requirements.txt && pip install -r channel-service/requirements.txt"
+    startCommand: "bash start.sh"
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
+      - key: CHANNEL_SERVICE_URL
+        value: http://localhost:8001
+      - key: CRM_CALLBACK_URL
+        value: https://luxe-crm-api.onrender.com/api/receipts
+      - key: PYTHON_VERSION
+        value: "3.11"
