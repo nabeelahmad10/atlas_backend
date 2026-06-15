@@ -5,10 +5,10 @@ services:
     buildCommand: "pip install -r backend/requirements.txt && pip install -r channel-service/requirements.txt"
     startCommand: "bash start.sh"
     envVars:
-      - key: OPENAI_API_KEY
+      - key: MISTRAL_API_KEY
         sync: false
-      - key: OPENAI_MODEL
-        value: gpt-4o-mini
+      - key: MISTRAL_MODEL
+        value: mistral-large-latest
       - key: CHANNEL_SERVICE_URL
         value: http://localhost:8001
       - key: CRM_CALLBACK_URL
